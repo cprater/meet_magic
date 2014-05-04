@@ -43,3 +43,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Use pry Mo' Fucka
+gem 'pry'
+gem 'pry-nav'
