@@ -13,10 +13,19 @@ $background: "back-of-mtg-card.png";
 body {
 	background-image: url($background);
 	background-size: 100%;
+	font-family: 'Crimson Text', 'serif';
+	color: $text-color;
 }
 
-.wrapper {	
-	border: 1px solid red;
+a {
+	color: $text-color;
+
+	&:hover {
+		color: $nav-text-hover-color;
+	}
+}
+
+.wrapper {
 	margin-top: 3em;
 }
 
@@ -41,7 +50,6 @@ body {
 			text-decoration: none;
 
 			&:hover {
-				text-decoration: underline;
 				color: $nav-text-hover-color;
 			}
 		}

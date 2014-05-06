@@ -1,0 +1,46 @@
+@import "colors";
+
+@mixin form-styling {
+	display: inline-block;
+	background-color: $nav-background-color;
+	border: 1px dotted $nav-shadow-color;
+	padding: 1em;
+	box-shadow: 0 0 2px $nav-shadow-color inset; 
+
+	& input {
+		border: none;
+		background-color: $text-color;
+
+		&:focus {
+			outline-color: $nav-shadow-color;
+		}
+	}
+
+	& .level-label {
+		margin: 0.25em;
+	}
+
+	& .level {
+		display: inline-block;
+		margin-left: 0.25em;
+		margin-right: 0.25em;
+	}
+
+	& .button {
+		background-color: $text-color;
+		color: $nav-shadow-color;
+		box-shadow: 0 0 2px $nav-shadow-color inset;		
+		padding: 0 1em;
+
+		&:hover {
+			background-color: $nav-shadow-color;
+			color: $text-color;
+			box-shadow: 0 0 2px $text-color; 	
+		}
+	}
+
+}
+
+.new_user {
+	@include form-styling;
+}
