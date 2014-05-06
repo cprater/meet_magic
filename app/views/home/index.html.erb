@@ -1,2 +1,8 @@
 <h1>Meet MTG</h1>
 
+<!-- Some test display stuff -->
+<ul>
+	<% User.all.each do |u| %>
+		<li><%= u.name %></li>
+	<% end %>
+</ul>
