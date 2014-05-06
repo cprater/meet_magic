@@ -38,3 +38,6 @@ gem 'devise'
 # Use pry Mo' Fucka
 gem 'pry'
 gem 'pry-nav'
+
+# How you gone make your users?
+gem 'faker'
