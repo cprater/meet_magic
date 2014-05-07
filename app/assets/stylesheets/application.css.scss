@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ * require_tree .
  */
 
 @media (min-width: 1000px) {
@@ -17,4 +17,6 @@
 	@import "normalize";
 	@import "big";
 	@import "forms";
+	$map-size: 40em;
+	@import "map";
 }

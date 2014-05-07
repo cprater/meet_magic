@@ -41,3 +41,5 @@ gem 'pry-nav'
 
 # How you gone make your users?
 gem 'faker'
+
+gem 'geocoder'
