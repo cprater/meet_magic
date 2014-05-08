@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
 
   def populate_lat_lng
-  	self.lat_lng = {["lat"] => find_latitude, ["lng"] => find_longitude}
+  	self.lat_lng = {"lat" => find_latitude, "lng" => find_longitude}
   end
 
 private

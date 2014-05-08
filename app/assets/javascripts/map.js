@@ -8,61 +8,41 @@ $(function(){
 		method: 'GET',
 		success: function(serverResponse){
 			var lat = serverResponse.coords.lat;
-			var lon = serverResponse.coords.lon;
-			gmap = new GMap(lat,lon);
-			// getAllUserCoords();
-			placeMarker(32.5671309, -97.4165053);
+			var lng = serverResponse.coords.lng;
+			gmap = new GMap(lat,lng);
+			getAllUserCoords();
 		}
 	});
 });
-
-function codeAddress(address, geocoder) {
-  geocoder.geocode( { 'address': address.to_s}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      console.log(results);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-
-function codeAllAddresses(addresses){
-	var geocoder = new google.maps.Geocoder();
-
-	for(i=0; i < addresses.length; i++){
-		codeAddress(addresses[i], geocoder);
-	}
-
-}
 
 function getAllUserCoords(){
 	$.ajax({
 		url: '/get_all_user_coords',
 		method: 'GET',
 		success: function(serverResponse){
-			codeAllAddresses(serverResponse.points);
+			placeAllPoints(serverResponse.points);
 		}
 	});
 }
 
-var placeMarker = function(lat, lon){
+var placeMarker = function(lat, lng){
 	var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(lat, lon),
+    position: new google.maps.LatLng(lat, lng),
     map: map
   });
 };
 
 
 var placeAllPoints = function(points){
-	for(i = 0; i < points.length; i += 2){
-		placeMarker(points[i], points[i + 1]);
+	for(i = 0; i < points.length; i ++){
+		placeMarker(points[i].lat, points[i].lng);
 	}
 };
 
 
-var GMap = function(lat, lon){
+var GMap = function(lat, lng){
 	var mapOptions = {
-    center: new google.maps.LatLng(lat, lon),
+    center: new google.maps.LatLng(lat, lng),
     zoom: 2
   };
   map = new google.maps.Map(document.getElementById("map-canvas"),

@@ -17,16 +17,14 @@ class HomeController < ApplicationController
 
 	def get_current_user_coords
 		render json: {coords: {lat: request.location.latitude,
-													lon: request.location.longitude}}
+													lng: request.location.longitude}}
 	end
 
 	def get_all_user_coords
-		# points = []
-		# User.all.each do |u|
-			
-		# end
+		points = User.all.pluck(:lat_lng)
+		
 
-		# render json: {points: points}
+		render json: {points: points}
 	end
 
 end
