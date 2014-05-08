@@ -21,13 +21,12 @@ class HomeController < ApplicationController
 	end
 
 	def get_all_user_coords
-		points = []
-		User.all.each do |u|
-			points << u.location
-		end
-		
+		# points = []
+		# User.all.each do |u|
+			
+		# end
+
 		# render json: {points: points}
-		render json: {points: [request.location.latitude, request.location.longitude]}
 	end
 
 end

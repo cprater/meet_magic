@@ -2,5 +2,5 @@ User.create(name: "admin", email: "c@p.com", password: "bigbootyjudy", password_
 
 100.times do
 	password = Faker::Internet.password(8)
-	User.create(name: Faker::Name.first_name, email: Faker::Internet.email, password: password, password_confirmation: password, location: Faker::Address.zip, level: rand(3) + 1, score: Faker::Number.number(2), mentor: [true, false].sample )
+	User.create(name: Faker::Name.first_name, email: Faker::Internet.email, password: password, password_confirmation: password, location: Faker::Address.zip_code, level: rand(3) + 1, score: Faker::Number.number(2), mentor: [true, false].sample )
 end
