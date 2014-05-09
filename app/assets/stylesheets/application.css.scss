@@ -12,11 +12,11 @@
  * require_tree .
  */
 
-@media (min-width: 1000px) {
+// @media (min-width: 1000px) {
 	
 	@import "normalize";
 	@import "big";
 	@import "forms";
 	$map-size: 40em;
 	@import "map";
-}
+// }
