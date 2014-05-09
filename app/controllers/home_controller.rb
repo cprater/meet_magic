@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 	end
 
 	def get_all_user_coords
-		points = User.where('level = ? or mentor = true', current_user.level).pluck(:lat_lng)
+		points = User.where('level = ? or mentor = true', current_user.level).pluck(:info)
 		render json: {points: points}
 	end
 

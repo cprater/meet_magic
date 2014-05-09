@@ -1,7 +1,7 @@
 $(function(){
 
 	var map;
-	var gmap; 
+	var gmap;
 	
 });
 
@@ -23,14 +23,16 @@ function getAllUserCoords(){
 		url: '/get_all_user_coords',
 		method: 'GET',
 		success: function(serverResponse){
+			test = serverResponse.points;
 			placeAllPoints(serverResponse.points);
 		}
 	});
 }
 
-var placeMarker = function(lat, lng){
+var placeMarker = function(info){
 	var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(lat, lng),
+    position: new google.maps.LatLng(info.lat_lng.lat, info.lat_lng.lng),
+    title: info.name,
     map: map
   });
 };
@@ -38,7 +40,7 @@ var placeMarker = function(lat, lng){
 
 var placeAllPoints = function(points){
 	for(i = 0; i < points.length; i ++){
-		placeMarker(points[i].lat, points[i].lng);
+		placeMarker(points[i]);
 	}
 };
 
