@@ -1,9 +1,12 @@
 $(function(){
 
 	var map;
-	var gmap;
+	var gmap; 
 	
-	$.ajax({
+});
+
+function initialize(){
+		$.ajax({
 		url: '/get_current_user_coords',
 		method: 'GET',
 		success: function(serverResponse){
@@ -13,7 +16,7 @@ $(function(){
 			getAllUserCoords();
 		}
 	});
-});
+}
 
 function getAllUserCoords(){
 	$.ajax({
@@ -43,7 +46,7 @@ var placeAllPoints = function(points){
 var GMap = function(lat, lng){
 	var mapOptions = {
     center: new google.maps.LatLng(lat, lng),
-    zoom: 2
+    zoom: 8
   };
   map = new google.maps.Map(document.getElementById("map-canvas"),
     mapOptions);
