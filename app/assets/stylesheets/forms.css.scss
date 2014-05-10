@@ -43,4 +43,21 @@
 
 .new_user {
 	@include form-styling;
+	border: 1em solid $text-color;
+	min-height: 100%;
+	width: 33%;
+	margin: 0 33%;
+	// text-align: center;
+
+	& div {
+		margin: 1em;
+
+		& label {			
+			float: left;
+		}
+
+		& input {
+			
+		}
+	}
 }
