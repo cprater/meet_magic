@@ -1,4 +1,4 @@
-function initialize(){
+function initializeMap(){
 	var map;
 	var gmap;
 
@@ -28,7 +28,7 @@ function initialize(){
 			title: info.name,
 			map: map,
 		});
-			addInfoWindow(marker, info);
+		addInfoWindow(marker, info);
 	}
 
 	function placeAllPoints(points){
@@ -55,6 +55,7 @@ function initialize(){
 			"<ul class='info-window-stats'>" +
 				"<li> level: " + info.level + "</li>" +
 				"<li> score: " + info.score + "</li>" +
+				"<li> <a href='mailto:" + info.email + "'>Contact</a></li>" +
 			"</ul>" +
 		"</div>";
 

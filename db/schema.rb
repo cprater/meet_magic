@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140509205920) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "location"
+    t.string   "location"
     t.integer  "level"
     t.integer  "score"
     t.boolean  "mentor",                 default: false
