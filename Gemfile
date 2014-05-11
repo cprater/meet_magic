@@ -46,4 +46,4 @@ gem 'geocoder'
 
 # Deployment
 gem 'rails_12factor'
-ruby '2.0'
+ruby '2.0.0'
