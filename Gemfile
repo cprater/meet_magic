@@ -43,3 +43,7 @@ gem 'pry-nav'
 gem 'faker'
 
 gem 'geocoder'
+
+# Deployment
+gem 'rails_12factor'
+ruby '2.0'

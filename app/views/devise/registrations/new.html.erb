@@ -13,16 +13,20 @@
   <div><%= f.label :location %>
     <%= f.text_field :location, placeholder: "" %></div>
 
-  <h4 class="level-label">Skill Level?</h4>
+  <div class="level-box">
 
-  <div class="level"><%= f.radio_button(:level, 1)  %><br />
-  <%= f.label(:level_1, 'Noob') %></div>  
+    <%= f.label "Skill Level?" %><br />
 
-  <div class="level"><%= f.radio_button(:level, 2)  %><br />
-  <%= f.label(:level_2, 'Novice') %></div>  
+    <div class="level"><%= f.radio_button(:level, 1)  %><br />
+    <%= f.label(:level_1, 'Noob') %></div>  
 
-  <div class="level"><%= f.radio_button(:level, 3)  %><br />
-  <%= f.label(:level_3, 'Pro') %></div>
+    <div class="level"><%= f.radio_button(:level, 2)  %><br />
+    <%= f.label(:level_2, 'Novice') %></div>  
+
+    <div class="level"><%= f.radio_button(:level, 3)  %><br />
+    <%= f.label(:level_3, 'Pro') %></div>
+
+  </div>
 
 	<div><%= f.check_box(:mentor)  %>
   <%= f.label(:mentor, 'Mentor new players?') %></div>  
