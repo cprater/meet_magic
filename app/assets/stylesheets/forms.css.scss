@@ -38,7 +38,6 @@
 			box-shadow: 0 0 2px $text-color; 	
 		}
 	}
-
 }
 
 .new_user {
@@ -47,16 +46,20 @@
 	min-height: 100%;
 	width: 33%;
 	margin: 0 33%;
-	// text-align: center;
 
 	& div {
-		margin: 1em;
+		// border: 1px dotted green;
+		clear:both;
+		padding: 1.5em;
 
-		& label {			
-			float: left;
+		& label {
+			// border: 1px dotted blue;
+			font-size: 1.5em;
 		}
 
 		& input {
+			// border: 1px dotted red;
+			float:right;
 			
 		}
 	}
