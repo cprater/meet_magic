@@ -18,13 +18,13 @@
     <%= f.label "Skill Level?" %><br />
 
     <div class="level"><%= f.radio_button(:level, 1)  %><br />
-    <%= f.label(:level_1, 'Noob') %></div>  
+    <%= f.label(:level_1, '< 6 months') %></div>  
 
     <div class="level"><%= f.radio_button(:level, 2)  %><br />
-    <%= f.label(:level_2, 'Novice') %></div>  
+    <%= f.label(:level_2, '6 months - 1 year') %></div>  
 
     <div class="level"><%= f.radio_button(:level, 3)  %><br />
-    <%= f.label(:level_3, 'Pro') %></div>
+    <%= f.label(:level_3, '> 1 year') %></div>
 
   </div>
 
@@ -37,7 +37,7 @@
   <div><%= f.label :password_confirmation, "Confirm Password" %>
   <%= f.password_field :password_confirmation %></div><br />
 
-  <div><%= f.submit "Sign up", class: "button" %></div>
+  <div><%= f.submit "Sign up", class: "button" %></div><br />
 
 	<%= render "devise/shared/links" %>
 <% end %>

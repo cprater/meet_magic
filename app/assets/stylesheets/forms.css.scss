@@ -17,8 +17,7 @@
 	}
 
 	& .level-box {
-		// font-size: 1.5em;
-		// text-align: center;
+		border: 1px solid $text-color;		
 	}
 
 	& .level-label {
@@ -34,8 +33,10 @@
 	& .button {
 		background-color: $text-color;
 		color: $nav-shadow-color;
+		font-size: 1.5em;
 		box-shadow: 0 0 2px $nav-shadow-color inset;		
-		padding: 0 1em;
+		padding: 0.5em 3em;
+		border-radius: 0.5em;
 
 		&:hover {
 			background-color: $nav-shadow-color;
@@ -59,7 +60,7 @@
 
 		& label {
 			// border: 1px dotted blue;
-			font-size: 1.5em;
+			font-size: 1em;
 		}
 
 		& input {
