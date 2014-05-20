@@ -9,6 +9,30 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+  <div><%= f.label :name %>
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label :location %>
+    <%= f.text_field :location, placeholder: "" %></div>
+
+  <div class="level-box">
+
+    <%= f.label "Skill Level?" %><br />
+
+    <div class="level"><%= f.radio_button(:level, 1)  %><br />
+    <%= f.label(:level_1, '< 6 months') %></div>  
+
+    <div class="level"><%= f.radio_button(:level, 2)  %><br />
+    <%= f.label(:level_2, '6 months - 1 year') %></div>  
+
+    <div class="level"><%= f.radio_button(:level, 3)  %><br />
+    <%= f.label(:level_3, '> 1 year') %></div>
+
+  </div>
+
+  <div><%= f.check_box(:mentor)  %>
+  <%= f.label(:mentor, 'Mentor new players?') %></div>  
+
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
