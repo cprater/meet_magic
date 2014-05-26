@@ -10,6 +10,9 @@ class HomeController < ApplicationController
 
 	def index
 		@user = User.new
+
+		# @nearby_users_count = User.where(lat_lng: {"lat"=>43.1139161, "lng"=> -84.08830429999999}).count
+		@all_users_count = User.all.count
 	end
 
 	def map

@@ -1,9 +1,27 @@
 @import "colors";
 
+@mixin button-styling {
+	background-color: $text-color;
+	color: $nav-shadow-color;
+	font-size: 1.5em;
+	box-shadow: 0 0 2px $nav-shadow-color inset;		
+	padding: 0.5em 3em;
+	border-radius: 0.5em;
+
+	&:hover {
+		background-color: $nav-shadow-color;
+		color: $text-color;
+		box-shadow: 0 0 2px $text-color; 	
+	}
+}
+
 @mixin form-styling {
 	display: inline-block;
 	background-color: $nav-background-color;
-	border: 1px dotted $nav-shadow-color;
+	border: 1em solid $text-color;
+	min-height: 100%;
+	width: 33%;
+	margin: 0 33%;
 	border-radius: 1em;
 	padding: 1em;
 	box-shadow: 0 0 2px $nav-shadow-color inset; 
@@ -32,27 +50,13 @@
 	}
 
 	& .button {
-		background-color: $text-color;
-		color: $nav-shadow-color;
-		font-size: 1.5em;
-		box-shadow: 0 0 2px $nav-shadow-color inset;		
-		padding: 0.5em 3em;
-		border-radius: 0.5em;
-
-		&:hover {
-			background-color: $nav-shadow-color;
-			color: $text-color;
-			box-shadow: 0 0 2px $text-color; 	
-		}
+		@include button-styling;
 	}
 }
 
 .new_user {
 	@include form-styling;
-	border: 1em solid $text-color;
-	min-height: 100%;
-	width: 33%;
-	margin: 0 33%;
+
 
 	& div {
 		// border: 1px dotted green;
@@ -74,10 +78,6 @@
 
 .edit_user {
 	@include form-styling;
-	border: 1em solid $text-color;
-	min-height: 100%;
-	width: 33%;
-	margin: 0 33%;
 
 	& div {
 		// border: 1px dotted green;
