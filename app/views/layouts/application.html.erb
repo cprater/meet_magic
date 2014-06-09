@@ -5,17 +5,25 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>  
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
 </head>
-<body>
+<body onload="initializeAutoComplete()">
 
 		<div class="nav">
 			<ul class="nav-bar">
-				<% if  current_user %>
+				<% if  current_user %>			 	
+
 					<li> Hello, <%= current_user.name  %></li>
 					<li><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
 					<li><%= link_to "Edit Info", edit_user_registration_path  %></li>
 					<li><%= link_to "Map", map_path  %></li>
+					<li class="search">
+						<%= form_for :user, url: '/users_by_location', method: 'get' do |f| %>
+							<%= f.text_field :location, id: 'user_location', placeholder: "Search a location" %>
+							<%= f.submit("Search") %>
+						<% end %>
+					</li>
 				<% else %>
 			  	<li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up"%></li>
 			  	<li><%= link_to "Log In", new_user_session_path, id: "log-in"  %></li>				

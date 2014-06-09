@@ -42,7 +42,20 @@ class HomeController < ApplicationController
 	end
 
 	def users_near_me
-		@nearby_users = current_user.nearbys(10)
+		if current_user
+			@nearby_users = current_user.nearbys(10)
+		else
+			@nearby_users = User.near([request.location.latitude, request.location.longitude], 10)
+		end
+	end
+
+	def all_users
+		@users = User.all
+	end
+
+	def users_by_location
+		@location = params[:user]["location"]
+		@users = User.near(@location, 10)
 	end
 
 end
