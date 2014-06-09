@@ -24,15 +24,5 @@ private
     results = Geocoder.search(self.location)[0]
     return results.geometry["location"] if results
   end
-
-	# def find_latitude
-	# 	results = Geocoder.search(self.location)[0]
-	# 	return results.geometry["location"]["lat"] if results
-	# end
-
-	# def find_longitude
-	# 	results = Geocoder.search(self.location)[0]
-	# 	return results.geometry["location"]["lng"] if results
-	# end
-
+  
 end

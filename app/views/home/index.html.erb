@@ -3,7 +3,7 @@
 	<h1>Find M:TG Players</h1>
 	<h1>Near You!</h1>
 	<button>Get Started!</button>
-	<h3> <%= @nearby_users_count %> players near you!, <%= @all_users_count %> players total</h3>
+	<h3> <%= link_to "#{@nearby_users_count} players near you!",  users_near_me_path %> , <%= @all_users_count %> players total</h3>
 </div>
 
 

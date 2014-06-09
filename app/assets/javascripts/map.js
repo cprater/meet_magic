@@ -16,7 +16,7 @@ function initializeMap(){
 	function generateMap(lat, lng){
 		var mapOptions = {
 			center: new google.maps.LatLng(lat, lng),
-			zoom: 8
+			zoom: 10
 		};
 		map = new google.maps.Map(document.getElementById("map-canvas"),
 			mapOptions);

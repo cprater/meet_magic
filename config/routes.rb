@@ -4,4 +4,5 @@ MeetMagic::Application.routes.draw do
   get '/map', to: 'home#map'
   get '/get_all_user_coords', to: 'home#get_all_user_coords'
   get '/get_current_user_coords', to: 'home#get_current_user_coords'
+  get '/users_near_me', to: 'home#users_near_me'
 end

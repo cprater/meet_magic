@@ -28,13 +28,21 @@ class HomeController < ApplicationController
 	end
 
 	def get_current_user_coords
-		render json: {coords: {lat: request.location.latitude, 
-													lng: request.location.longitude}}
+		if current_user
+			lat, lng = current_user.latitude, current_user.longitude
+		else
+			lat, lng = request.location.latitude, request.location.longitude
+		end
+			render json: {coords: {lat: lat, lng: lng}}
 	end
 
 	def get_all_user_coords
 		points = User.where('level = ? or mentor = true', current_user.level).pluck(:info)
 		render json: {points: points}
+	end
+
+	def users_near_me
+		@nearby_users = current_user.nearbys(10)
 	end
 
 end
