@@ -1,0 +1,9 @@
+.list-users{
+	@include form-styling;
+
+	list-style: none;
+
+	& li {
+		margin: 1em 0;
+	}
+}

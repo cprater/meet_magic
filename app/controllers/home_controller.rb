@@ -51,6 +51,7 @@ class HomeController < ApplicationController
 
 	def all_users
 		@users = User.all
+		@users.sort_by!{|u| u.location}
 	end
 
 	def users_by_location
