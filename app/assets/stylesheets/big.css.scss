@@ -10,7 +10,31 @@ $background: "back-of-mtg-card.jpg";
 	box-shadow: 0 0.5em 1em $nav-shadow-color;
 }
 
+@mixin placeholder-styling{
+	::-webkit-input-placeholder{
+		color: $nav-shadow-color;
+	}
+
+	:-moz-placeholder {
+		color: $nav-shadow-color;
+	}
+
+	::-moz-placeholder{
+		color: $nav-shadow-color;	
+	}
+
+	:-ms-input-placeholder{
+		color: $nav-shadow-color;
+	}
+}
+
+
+// mixins ^^^^^^^^^^^^^^^
+// styles vvvvvvvvvvvvv
+
 body {
+	@include placeholder-styling;
+	
 	background-image: url($background);
 	background-size: 100%;
 	font-family: 'Crimson Text', 'serif';
@@ -53,6 +77,21 @@ a {
 
 			&:hover {
 				color: $nav-text-hover-color;
+			}
+		}
+
+		& .search-box {			
+			display: inline;
+
+			& input {
+
+				border: none;
+				background-color: $text-color;
+
+
+				&:focus {
+					outline-color: $nav-shadow-color;
+				}
 			}
 		}
 	}
