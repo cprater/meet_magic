@@ -1,5 +1,8 @@
-<ul class="list-users">
-	<% users.each do |user| %>
-		<li> <%= link_to user.name, '#' %> - Level <%= user.level %> <%= "mentor" if user.mentor %> - <%= user.location  %></li>
-	<% end %>
-</ul>
+<div class="list-users">
+	<h2><%= title  %></h2>
+	<ul>
+		<% users.each do |user| %>
+			<li> <%= link_to user.name, '#' %> - Level <%= user.level %> <span class="mentor"><%=" - mentor" if user.mentor %></span> - <%= user.location  %></li>
+		<% end %>
+	</ul>
+</div>

@@ -1,9 +1,18 @@
 .list-users{
 	@include form-styling;
 
+	& h2{	
+		text-align: center;
+	}
+
 	list-style: none;
 
 	& li {
 		margin: 1em 0;
+
+		& .mentor {
+			font-weight: bold;
+			color: green;
+		}
 	}
 }

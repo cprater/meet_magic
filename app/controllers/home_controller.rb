@@ -43,9 +43,9 @@ class HomeController < ApplicationController
 
 	def users_near_me
 		if current_user
-			@nearby_users = current_user.nearbys(10)
+			@nearby_users = current_user.nearbys(10).sort_by{|u| -u.level}
 		else
-			@nearby_users = User.near([request.location.latitude, request.location.longitude], 10)
+			@nearby_users = User.near([request.location.latitude, request.location.longitude], 10).sort_by{|u| -u.level}
 		end
 	end
 
