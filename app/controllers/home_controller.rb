@@ -1,8 +1,8 @@
-# class Rack::Request
-# 	def ip
-# 		'184.154.83.119'
-# 	end
-# end
+class Rack::Request
+	def ip
+		'184.154.83.119'
+	end
+end
 
 
 class HomeController < ApplicationController
@@ -11,6 +11,7 @@ class HomeController < ApplicationController
 	def index
 
 		result = request
+		puts result
 
 		if current_user
 			location = [current_user.latitude, current_user.longitude]
