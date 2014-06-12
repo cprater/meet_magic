@@ -1,7 +1,6 @@
 # class Rack::Request
 # 	def ip
 # 		'184.154.83.119'
-# 		# '167.202.201.21'
 # 	end
 # end
 
@@ -10,6 +9,9 @@ class HomeController < ApplicationController
 	respond_to :json
 
 	def index
+
+		binding.pry
+
 
 		if current_user
 			location = [current_user.latitude, current_user.longitude]
