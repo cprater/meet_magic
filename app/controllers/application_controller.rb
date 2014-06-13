@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  class Rack::Request
+		def ip
+			'184.154.83.119'
+		end
+	end
+
 end

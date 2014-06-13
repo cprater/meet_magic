@@ -1,10 +1,3 @@
-class Rack::Request
-	def ip
-		'184.154.83.119'
-	end
-end
-
-
 class HomeController < ApplicationController
 	respond_to :json
 
