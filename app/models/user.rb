@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   geocoded_by :location
-  after_validation :geocode
+  # after_validation :geocode
   before_save :populate_lat_lng, :populate_info
 
   def populate_lat_lng
