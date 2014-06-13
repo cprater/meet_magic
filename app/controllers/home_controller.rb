@@ -3,13 +3,13 @@ class HomeController < ApplicationController
 
 	def index
 
-		result = request
-		puts result
+		# result = request
+		# binding.pry
 
 		if current_user
 			location = [current_user.latitude, current_user.longitude]
 		else
-			# location = [request.location.latitude, request.location.longitude]
+			location = [request.location.latitude, request.location.longitude]
 		end
 
 		@nearby_users_count = User.near(location, 10).count
