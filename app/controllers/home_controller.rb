@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 			@location = [request.location.latitude, request.location.longitude]
 		end
 
-		@nearby_users_count = User.near(location, 10).count
+		@nearby_users_count = User.near(@location).count
 		@all_users_count = User.all.count
 	end
 end
