@@ -18,8 +18,8 @@
 					<li><%= link_to "Edit Info", edit_user_registration_path  %></li>
 					<li><%= link_to "Map", map_path  %></li>
 					<li class="search">
-						<%= form_for :user, url: '/users_by_location', method: 'get', html: {class: 'search-box'} do |f| %>
-							<%= f.text_field :location, id: 'user_location', placeholder: "Search a location" %>
+						<%= form_for :search, url: '/search', method: 'get', html: {class: 'search-box'} do |f| %>
+							<%= f.text_field :input, id: 'search-input', placeholder: "Search a location/user" %>
 							<%= f.submit("Search") %>
 						<% end %>
 					</li>
