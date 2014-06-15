@@ -1,0 +1,9 @@
+<div class="user-page">
+	<h2><%= @user.name %>'s Contact Page</h2>
+	<ul>
+		<li><span class="user-profile-category">Location:</span> <span class="user-profile-data"><%= @user.location  %></span></li>
+		<li><span class="user-profile-category">Level:</span> <span class="user-profile-data"><%= @user.level  %></span></li>		
+		<li>Is <% unless @user.mentor %> not <% end %> a mentor</li>
+		<li><span class="user-profile-category">Email:</span> <span class="user-profile-data"><%= mail_to @user.email %></span></li>
+	</ul>
+</div>

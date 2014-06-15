@@ -2,7 +2,7 @@
 	<h2><%= title  %></h2>
 	<ul>
 		<% users.each do |user| %>
-			<li> <%= link_to user.name, '#' %> - Level <%= user.level %> <span class="mentor"><%=" - mentor" if user.mentor %></span> - <%= user.location  %></li>
+			<li> <%= link_to user.name, user_path(user.id) %> - Level <%= user.level %> <span class="mentor"><%=" - mentor" if user.mentor %></span> - <%= user.location  %></li>
 		<% end %>
 	</ul>
 </div>

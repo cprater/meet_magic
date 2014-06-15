@@ -13,9 +13,13 @@ class UserController < ApplicationController
 		@users.sort_by!{|u| u.location}
 	end
 
-	def users_by_location
-		@location = params[:user]["location"]
-		@users = User.near(@location, 10)
+	def show
+		@user = User.find(params[:format])
 	end
+
+	# def users_by_location
+	# 	@location = params[:user]["location"]
+	# 	@users = User.near(@location, 10)
+	# end
 
 end

@@ -1,0 +1,25 @@
+.user-page {
+	@include form-styling;
+
+	& h2 {
+		text-align: center;
+	}	
+
+	& ul {
+		list-style: none;
+
+		& li {
+			border: 0.15em dotted $nav-shadow-color;
+			padding: 0.25em;
+			margin: 0.25em;
+		}
+
+		& .user-profile-category{
+			font-weight: bold;
+		}
+
+		& .user-profile-data{			
+			float: right;			
+		}
+	}
+}
