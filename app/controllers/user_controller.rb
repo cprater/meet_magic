@@ -17,9 +17,4 @@ class UserController < ApplicationController
 		@user = User.find(params[:format])
 	end
 
-	# def users_by_location
-	# 	@location = params[:user]["location"]
-	# 	@users = User.near(@location, 10)
-	# end
-
 end
