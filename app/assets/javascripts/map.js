@@ -54,7 +54,6 @@ function initializeMap(){
 			"<h3 class='name'>" + info.name + "</h3>" +
 			"<ul class='info-window-stats'>" +
 				"<li> level: " + info.level + "</li>" +
-				"<li> score: " + info.score + "</li>" +
 				"<li> <a href='mailto:" + info.email + "'>Contact</a></li>" +
 			"</ul>" +
 		"</div>";
