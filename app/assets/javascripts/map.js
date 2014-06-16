@@ -22,7 +22,7 @@ function initializeMap(){
 			mapOptions);
 
 		// create OMS instance
-		oms = new OverlappingMarkerSpiderfier(map);
+		oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true});
 		setupOms(oms);
 		}
 
@@ -72,6 +72,7 @@ function initializeMap(){
 		google.maps.event.addListener(marker, 'click', function() {
 			infoWindow.open(map,marker);
 		});
+
 	}
 
 	function setupOms(oms){
@@ -81,9 +82,6 @@ function initializeMap(){
 			iw.open(map, marker);
 		});
 
-		oms.addListener('spiderfy', function(markers){
-			iw.close();
-		});
 	}
 
 
