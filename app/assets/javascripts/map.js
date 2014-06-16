@@ -24,7 +24,7 @@ function initializeMap(){
 		// create OMS instance
 		oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true});
 		setupOms(oms);
-		}
+	}
 
 	function placeMarker(info){
 		var marker = new google.maps.Marker({
@@ -32,6 +32,7 @@ function initializeMap(){
 			title: info.name,
 			map: map,
 		});
+
 		addInfoWindow(marker, info);
 
 		// add marker to oms
@@ -57,20 +58,28 @@ function initializeMap(){
 
 
 	function addInfoWindow(marker, info){
+		var infoWindow = null;
 		var infoBox = "<div class='info-box'>" +
 			"<h3 class='name'>" + info.name + "</h3>" +
 			"<ul class='info-window-stats'>" +
-				"<li> level: " + info.level + "</li>" +
-				"<li> <a href='mailto:" + info.email + "'>Contact</a></li>" +
+			"<li> level: " + info.level + "</li>" +
+			"<li> <a href='mailto:" + info.email + "'>Contact</a></li>" +
 			"</ul>" +
-		"</div>";
-
-		var infoWindow = new google.maps.InfoWindow({
-			content: infoBox
-		});
+			"</div>";
 
 		google.maps.event.addListener(marker, 'click', function() {
-			infoWindow.open(map,marker);
+
+			if (infoWindow){
+				infoWindow.close();
+				infoWindow = null;
+			}else {
+				infoWindow = new google.maps.InfoWindow({
+					content: infoBox
+				});
+				infoWindow.open(map,marker);
+			}
+
+			
 		});
 
 	}
@@ -78,7 +87,7 @@ function initializeMap(){
 	function setupOms(oms){
 		var iw = new google.maps.InfoWindow();
 		oms.addListener('click', function(marker, event){
-			iw.setContent(marker.desc);
+			// iw.setContent(marker.desc);
 			iw.open(map, marker);
 		});
 
