@@ -20,6 +20,10 @@ function initializeMap(){
 		};
 		map = new google.maps.Map(document.getElementById("map-canvas"),
 			mapOptions);
+
+		// create OMS instance
+		oms = new OverlappingMarkerSpiderfier(map);
+		setupOms(oms);
 		}
 
 	function placeMarker(info){
@@ -29,6 +33,9 @@ function initializeMap(){
 			map: map,
 		});
 		addInfoWindow(marker, info);
+
+		// add marker to oms
+		oms.addMarker(marker);
 	}
 
 	function placeAllPoints(points){
@@ -66,4 +73,25 @@ function initializeMap(){
 			infoWindow.open(map,marker);
 		});
 	}
+
+	function setupOms(oms){
+		var iw = new google.maps.InfoWindow();
+		oms.addListener('click', function(marker, event){
+			iw.setContent(marker.desc);
+			iw.open(map, marker);
+		});
+
+		oms.addListener('spiderfy', function(markers){
+			iw.close();
+		});
+	}
+
+
+
+
+
+
+
+
+
 }
