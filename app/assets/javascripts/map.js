@@ -79,8 +79,6 @@ function initializeMap(){
 				});
 				infoWindow.open(map,marker);
 			}
-
-			console.log(this.infoBox);
 			
 		});
 
