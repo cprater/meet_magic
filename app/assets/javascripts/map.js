@@ -1,6 +1,5 @@
 function initializeMap(){
 	var map;
-	var gmap;
 
 	$.ajax({
 		url: '/get_current_user_coords',
@@ -27,13 +26,14 @@ function initializeMap(){
 	}
 
 	function placeMarker(info){
-		var marker = new google.maps.Marker({
+		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(info.lat_lng.lat, info.lat_lng.lng),
 			title: info.name,
 			map: map,
+			info: info
 		});
 
-		addInfoWindow(marker, info);
+		addInfoWindow(marker);
 
 		// add marker to oms
 		oms.addMarker(marker);
@@ -57,17 +57,18 @@ function initializeMap(){
 	}
 
 
-	function addInfoWindow(marker, info){
+	function addInfoWindow(marker){
 		var infoWindow = null;
-		var infoBox = "<div class='info-box'>" +
-			"<h3 class='name'>" + info.name + "</h3>" +
-			"<ul class='info-window-stats'>" +
-			"<li> level: " + info.level + "</li>" +
-			"<li> <a href='mailto:" + info.email + "'>Contact</a></li>" +
-			"</ul>" +
-			"</div>";
 
 		google.maps.event.addListener(marker, 'click', function() {
+
+			var infoBox = "<div class='info-box'>" +
+			"<h3 class='name'>" + this.info.name + "</h3>" +
+			"<ul class='info-window-stats'>" +
+			"<li> level: " + this.info.level + "</li>" +
+			"<li> <a href='mailto:" + this.info.email + "'>Contact</a></li>" +
+			"</ul>" +
+			"</div>";
 
 			if (infoWindow){
 				infoWindow.close();
@@ -79,6 +80,7 @@ function initializeMap(){
 				infoWindow.open(map,marker);
 			}
 
+			console.log(this.infoBox);
 			
 		});
 
@@ -92,8 +94,6 @@ function initializeMap(){
 		});
 
 	}
-
-
 
 
 
