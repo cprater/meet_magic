@@ -14,6 +14,5 @@ class HomeController < ApplicationController
 	end
 
 	def get_started
-
 	end
 end
