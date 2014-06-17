@@ -6,7 +6,9 @@
 	min-height: 100%;
 	min-width: 100%;
 
-	& button {
+	& .get-started {
 		@include button-styling;
+
+		text-decoration: none;
 	}
 }

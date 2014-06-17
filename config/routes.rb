@@ -1,6 +1,7 @@
 MeetMagic::Application.routes.draw do
   devise_for :users
   root to: 'home#index'
+  get '/get_started', to: 'home#get_started'
   get '/user', to: 'user#show'
   get '/map', to: 'map#show'
   get '/get_all_user_coords', to: 'map#get_all_user_coords'

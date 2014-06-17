@@ -12,4 +12,8 @@ class HomeController < ApplicationController
 		@nearby_users_count = User.near(location).count
 		@all_users_count = User.all.count
 	end
+
+	def get_started
+
+	end
 end

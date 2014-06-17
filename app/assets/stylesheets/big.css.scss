@@ -41,6 +41,10 @@ body {
 	color: $text-color;
 }
 
+h1 {
+	text-align: center;
+}
+
 a {
 	color: $text-color;
 
@@ -95,4 +99,28 @@ a {
 			}
 		}
 	}
+}
+
+.getting-started {
+	@include form-styling;
+
+	& .getting-started-steps{
+		list-style: none;
+		padding: 0;
+		
+		& .step-headers {
+			font-weight: bold;
+			margin: 0.5em 0;
+			padding: 0.25em 0;
+			border-bottom: 1px solid $nav-shadow-color;
+		}
+
+	}
+
+	& .sub-steps {
+		& li {
+			font-weight: normal;
+		}
+	}
+
 }

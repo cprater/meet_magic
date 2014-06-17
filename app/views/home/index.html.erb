@@ -2,7 +2,7 @@
 <div class="landing-info">
 	<h1>Find M:TG Players</h1>
 	<h1>Near You!</h1>
-	<button>Get Started!</button>
+	<%= link_to "Get Started!", get_started_path, class: 'get-started'  %>
 	<h3> <%= link_to "#{@nearby_users_count} players near you!",  users_near_me_path %>  <%= link_to "#{@all_users_count} players total", all_users_path %></h3>
 </div>
 
