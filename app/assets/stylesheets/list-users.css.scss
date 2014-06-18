@@ -1,12 +1,14 @@
 .list-users{
-	@include form-styling;
+	// @include form-styling;
 
 	& h2{	
 		text-align: center;
 	}
 
-	list-style: none;
-
+	& ul {
+		list-style: none;
+	}
+	
 	& li {
 		margin: 1em 0;
 

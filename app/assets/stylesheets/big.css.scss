@@ -102,6 +102,14 @@ a {
 	}
 }
 
+.alert {
+	text-align: center;
+}
+
+.notice {
+	text-align: center;
+}
+
 .getting-started {
 	@include form-styling;
 
@@ -123,5 +131,12 @@ a {
 			font-weight: normal;
 		}
 	}
+}
 
+.list-view {
+	@include form-styling;
+
+	text-align: center;
+	border: none;
+	box-shadow: 0 0 0.5em $text-color;
 }

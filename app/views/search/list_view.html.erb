@@ -1,0 +1,10 @@
+<div class="list-view">
+
+	<%= form_for :search, url: '/search', method: 'get', html: {class: 'search-box', id: 'search'} do |f| %>
+		<%=	f.text_field :input, id: 'search-input', placeholder: "Search a location/user" %>
+		<%= f.submit("Search") %>
+	<% end %>
+
+	<h3> <%= link_to "#{@nearby_users_count} players near you!",  users_near_me_path, class: 'list-view-link' %>  <%= link_to "#{@all_users_count} players total", all_users_path, class: 'list-view-link' %></h3>
+	<div class="append-users-here"></div>
+</div> 

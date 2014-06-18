@@ -16,13 +16,8 @@
 					<li> Hello, <%= current_user.name  %></li>
 					<li><%= link_to "Log Out", destroy_user_session_path, method: :delete  %></li>
 					<li><%= link_to "Edit Info", edit_user_registration_path  %></li>
-					<li><%= link_to "Map", map_path  %></li>
-					<li class="search">
-						<%= form_for :search, url: '/search', method: 'get', html: {class: 'search-box'} do |f| %>
-							<%= f.text_field :input, id: 'search-input', placeholder: "Search a location/user" %>
-							<%= f.submit("Search") %>
-						<% end %>
-					</li>
+					<li><%= link_to "Map View", map_path  %></li>
+					<li><%= link_to "List View", list_view_path  %></li>
 				<% else %>
 			  	<li><%= link_to "Sign Up", new_user_registration_path, id: "sign-up"%></li>
 			  	<li><%= link_to "Log In", new_user_session_path, id: "log-in"  %></li>				
