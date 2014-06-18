@@ -23,7 +23,12 @@ function initializeMap(){
 		// create OMS instance
 		oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true});
 		setupOms(oms);
+
+		//setup Search Bar
+		setupSearchBar(map);
+
 	}
+
 
 	function placeMarker(info){
 		marker = new google.maps.Marker({
@@ -94,7 +99,22 @@ function initializeMap(){
 
 	}
 
+	function setupSearchBar(map){
+		$('#map-search').on('submit', function(e){
+			e.preventDefault();
 
+			query = $('#map_search_input').val();
+			
+			var geocoder = new google.maps.Geocoder();
+			geocoder.geocode({'address': query}, function(results, status){
+				if (status == google.maps.GeocoderStatus.OK) {
+					map.setCenter(results[0].geometry.location);
+				} else {
+					alert("Could not find location for the following reason: " + status);
+					}
+			});
+		});
+	}
 
 
 
