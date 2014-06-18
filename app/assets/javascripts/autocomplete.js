@@ -3,10 +3,19 @@ function initializeAutoComplete(){
 		new google.maps.LatLng(-90, -180),
 		new google.maps.LatLng(90, 180));
 
-	var input = document.getElementById('user_location');
+	var input = findElement();
 
 	var searchBox = new google.maps.places.SearchBox(input, {
 		bounds: defaultBounds,
 		types: ['cities']
 	});
+}
+
+function findElement(){
+	var element = document.getElementById('user_location');
+	if (element === null){
+		element = document.getElementById('search-input');
+	}
+
+	return element;
 }
