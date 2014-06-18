@@ -66,7 +66,8 @@ function initializeMap(){
 			"<h3 class='name'>" + this.info.name + "</h3>" +
 			"<ul class='info-window-stats'>" +
 			"<li> level: " + this.info.level + "</li>" +
-			"<li> <a href='mailto:" + this.info.email + "'>Contact</a></li>" +
+			"<li> <a href='/user." + this.info.user_id + "'>Contact Page</a></li>" +
+			"<li> <a href='mailto:" + this.info.email + "'>Email</a></li>" +
 			"</ul>" +
 			"</div>";
 

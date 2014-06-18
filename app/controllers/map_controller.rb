@@ -16,7 +16,7 @@ class MapController < ApplicationController
 	end
 
 	def get_all_user_coords
-		points = User.where('level = ? or mentor = true', current_user.level).pluck(:info)
+		points = Info.where('level = ? or mentor = true', current_user.level)
 		render json: {points: points}
 	end
 

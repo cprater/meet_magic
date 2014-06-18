@@ -26,4 +26,8 @@ class UserController < ApplicationController
 		@user = User.find(params[:format])
 	end
 
+	def find_user
+		binding.pry
+	end
+
 end

@@ -16,6 +16,17 @@ ActiveRecord::Schema.define(version: 20140609172322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "infos", force: true do |t|
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "email"
+    t.string  "location"
+    t.integer "level"
+    t.integer "score"
+    t.boolean "mentor"
+    t.text    "lat_lng"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -35,7 +46,6 @@ ActiveRecord::Schema.define(version: 20140609172322) do
     t.integer  "score"
     t.boolean  "mentor",                 default: false
     t.text     "lat_lng"
-    t.text     "info"
     t.float    "latitude"
     t.float    "longitude"
   end
